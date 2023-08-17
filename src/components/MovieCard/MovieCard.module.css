@@ -1,0 +1,52 @@
+.maincontainer {
+  width: 16rem;
+  height: 21rem;
+  /* background-color: lightgrey; */
+  /* border: 1px solid grey; */
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: lightgray 0px 6px 12px -2px, gray 0px 3px 7px -3px;
+}
+.imagecontainer {
+  width: 100%;
+  height: 75%;
+}
+.imagearea {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.movie_details {
+  width: 100%;
+  height: 25%;
+  background-color: white;
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+.title_rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 0.2rem;
+}
+.title {
+  font-weight: 600;
+  width: 65%;
+  height: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rating {
+  color: gray;
+}
+.desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

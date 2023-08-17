@@ -1,0 +1,15 @@
+.maincontainer{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.movielistcontainer{
+    height: calc(100% - 4rem);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 2rem 0rem;
+    justify-content: space-evenly;
+    overflow-y: auto;
+}

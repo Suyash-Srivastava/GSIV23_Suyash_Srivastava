@@ -1,0 +1,26 @@
+.maincontainer{
+    width: 100%;
+    height: 4rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0rem 2rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.firstcomponent{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+.secondcomponent{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    justify-content: end;
+}
+.home_icon{
+    width: 1.5rem;
+    height: 1.5rem;
+}

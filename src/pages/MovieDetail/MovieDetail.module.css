@@ -1,0 +1,8 @@
+.maincontainer{
+    height:100%;
+    width: 100%;
+}
+.movie_detail_body{
+    height: calc(100% - 4rem);
+    width: 100%;
+}
