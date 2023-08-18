@@ -3,7 +3,6 @@ import apiClient from "./apiClient";
 import { IMovieCardInfo, IMovieDetails } from "./apiInterface";
 
 async function getMovieList(page_no: number) {
-
     try {
         const raw = await apiClient.get('/movie/upcoming?page=' + page_no)
         const actualdata: IMovieCardInfo[] = raw.data.results

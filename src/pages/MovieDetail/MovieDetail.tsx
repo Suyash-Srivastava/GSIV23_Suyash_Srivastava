@@ -15,14 +15,14 @@ const MovieDetail = () => {
           <div className={styles.other_details}>
             <div className={styles.title_rating}>
               <div className={styles.title}>{movieDetails?.title ?? 'Title'}</div>
-              <div className={styles.rating}>{'(' + movieDetails?.rating ?? 'Rating' + ')'}</div>
+              <div className={styles.rating}>{'(' + (movieDetails?.rating ?? '0.0') + ')'}</div>
             </div>
             <div className={styles.year_length_director}>
               <div>{movieDetails?.year ?? 'year of release'}</div>|
-              <div>{movieDetails?.movie_length ?? '-'}min</div>|
-              <div className={styles.directors}>{movieDetails?.directors.join(', ') ?? '-'}</div>
+              <div>{movieDetails?.movie_length ?? '0'}min</div>|
+              <div className={styles.directors}>{movieDetails?.directors.join(', ') ?? 'director list ...'}</div>
             </div>
-            <div className={styles.cast}>Cast: {movieDetails?.cast.join(', ') ?? '-'}</div>
+            <div className={styles.cast}>Cast: {movieDetails?.cast.join(', ') ?? 'cast list ...'}</div>
             <div className={styles.desc}>Description: {movieDetails?.desc ?? 'Movie Description is loading'}</div>
           </div>
         </div>
