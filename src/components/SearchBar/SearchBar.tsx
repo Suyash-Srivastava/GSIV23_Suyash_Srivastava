@@ -17,6 +17,7 @@ const SearchBar = () => {
     if (searchInput.length > 0) {
       const searchTimeout = setTimeout(getSearchResults, 500)
       return () => clearTimeout(searchTimeout)
+      //TODO: Additnaly abort call for api should be written here
     }
     else{
       setAllMovieList()
