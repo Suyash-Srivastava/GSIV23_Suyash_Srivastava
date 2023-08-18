@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './SearchBar.module.css'
 import search_icon from '../../assets/svg/search.svg'
 import { getMovieList, searchInMovieList } from '../../api/apiCalls'
@@ -11,7 +11,6 @@ const SearchBar = () => {
   // const searchInput: string = useSelector((state: RootState) => state.searchinput.values)
   const [searchInput, setSearchInput] = useState('')
   const dispatch = useDispatch()
-  const searchTimeoutRef = useRef(null);
   const controller = new AbortController()
   let searchTimeout:any;
 
