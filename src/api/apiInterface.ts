@@ -14,6 +14,15 @@ interface IMovieCardInfo {
     vote_average: number,
     vote_count: number,
 }
+interface IMovieDetails{
+    imgPath:string,
+    title:string,
+    rating:number,
+    year:number,
+    movie_length:number,
+    desc:string,
+    directors:string[],
+    cast:string[]
+}
 
-
-export type{IMovieCardInfo}
+export type{IMovieCardInfo,IMovieDetails}

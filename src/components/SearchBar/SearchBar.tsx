@@ -1,8 +1,15 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import styles from './SearchBar.module.css'
 import search_icon from '../../assets/svg/search.svg'
+import { searchInMovieList } from '../../api/apiCalls'
 const SearchBar = () => {
   const [searchInput, setsearchInput] = useState('')
+
+  useEffect(() => {
+    searchInMovieList(searchInput,1)
+  }, [searchInput])
+  
+
   return (
     <div className={styles.maincontainer}>
       <img className={styles.search_icon} src={search_icon} alt="search"/>

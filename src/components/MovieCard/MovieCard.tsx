@@ -9,7 +9,7 @@ const MovieCard = ({details}:{details:IMovieCardInfo}) => {
   const navigate=useNavigate()
 
   return (
-    <div className={styles.maincontainer} onClick={()=>navigate('moviedetail/'+id)}>
+    <div className={styles.maincontainer} onClick={()=>navigate('/moviedetail/'+id)}>
         <div className={styles.imagecontainer}><img className={styles.imagearea} src={'https://image.tmdb.org/t/p/original/'+poster_path} alt="movie" loading='lazy'/></div>
         <div className={styles.movie_details}>
             <div className={styles.title_rating}>

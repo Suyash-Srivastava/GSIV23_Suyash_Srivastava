@@ -10,6 +10,6 @@
     flex-wrap: wrap;
     padding: 1rem;
     gap: 2rem 0rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
     overflow-y: auto;
 }

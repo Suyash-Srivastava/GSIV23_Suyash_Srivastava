@@ -1,28 +1,28 @@
-import {useState,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router';
 import { getMovieDetail } from '../../api/apiCalls';
+import { IMovieDetails } from '../../api/apiInterface';
 
 const useMovieDetails = () => {
-    const params=useParams()
+    const params = useParams()
 
-    const [movieDetails, setmovieDetails] = useState({})
+    const [movieDetails, setmovieDetails] = useState<IMovieDetails>()
 
     useEffect(() => {
-        setMovieDetails((params.movieId))
+        if (params.movieId)
+            setMovieDetails((params.movieId))
     }, [params])
-    async function setMovieDetails(id:string){
-    if(id){
-    const data=await getMovieDetail(id)
-    console.log(data);
+
+    async function setMovieDetails(id: string) {
+        const data: IMovieDetails = await getMovieDetail(id)
+        setmovieDetails(data)
     }
-    else{
-        return {}
+    return {
+        movieDetails
     }
-    
-    }
-  return (
-    movieDetails
-  )
 }
+
+
+
 
 export default useMovieDetails
