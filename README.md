@@ -47,6 +47,12 @@ Start the server
 - Better TypeSafe Code
 - Better Error Handling
 
+
+## Screenshots
+[https://github.com/Suyash-Srivastava/GSIV23_Suyash_Srivastava/blob/main/src/assets/png/movielistpage.png]
+[https://github.com/Suyash-Srivastava/GSIV23_Suyash_Srivastava/blob/main/src/assets/png/moviedetailpage.png]
+
+
 ## Feedback
 
 This is a great challenge. Only inprovement i can suggest is providing a figma file, so that it would be easy to get assest and colors.
