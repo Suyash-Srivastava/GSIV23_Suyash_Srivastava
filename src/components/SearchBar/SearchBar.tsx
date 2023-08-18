@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from './SearchBar.module.css'
 import search_icon from '../../assets/svg/search.svg'
 import { getMovieList, searchInMovieList } from '../../api/apiCalls'
@@ -11,26 +11,30 @@ const SearchBar = () => {
   // const searchInput: string = useSelector((state: RootState) => state.searchinput.values)
   const [searchInput, setSearchInput] = useState('')
   const dispatch = useDispatch()
-
+  const searchTimeoutRef = useRef(null);
   const controller = new AbortController()
+  let searchTimeout:any;
 
   useEffect(() => {
     //Debouncing implemented in Search
-    let searchTimeout;
-
     if (searchTimeout) {
-      controller.abort()
       clearTimeout(searchTimeout)
+      controller.abort()
     }
     if (searchInput.length > 0) {
-      searchTimeout = setTimeout(() => getSearchResults(controller), 500)
+      searchTimeout = setTimeout(getSearchResults, 500)
     }
     else {
-      setTimeout(() => setAllMovieList(), 500)
+      setAllMovieList()
+    }
+    return ()=>{
+      if(searchTimeout){
+        clearTimeout(searchTimeout)
+      }
     }
   }, [searchInput])
 
-  async function getSearchResults(controller: AbortController) {
+  async function getSearchResults() {
     const reslts = await searchInMovieList(searchInput, 1, controller)
     dispatch(setMovieList(reslts))
   }
