@@ -19,24 +19,30 @@ const MovieList = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        setloading(true)
+
         dispatch(setMovieList([]))
         setAllMovieList()
-        setloading(false)
+
     }, [])
 
     async function setAllMovieList() {
-        // setloading(true)
+
+        if (pageNo === 1)
+            setloading(true)
+
         const movielistdata = await getMovieList(pageNo)
         const newmovielist = [...movieList, ...movielistdata]
         dispatch(setMovieList(newmovielist))
         setPageNo((old) => old + 1)
+
+        if (pageNo === 1)
+            setloading(false)
+
         return movielistdata
-        // setloading(false)
     }
 
 
-    const handleScroll = async (event:any) => {
+    const handleScroll = async (event: any) => {
         const scrollHeight = event.target.scrollHeight;
         const scrollTop = event.target.scrollTop;
         const clientHeight = event.target.clientHeight;
@@ -56,15 +62,18 @@ const MovieList = () => {
             <NavBar FirstComponent={<SearchBar />} />
 
             <div className={styles.movielistcontainer} onScroll={handleScroll}>
+
                 {
-                    loading ? <h1>Movies are loading...</h1> :
+                    loading === true ? <h1>Movies are loading...</h1> :
                         movieList.length === 0 ?
                             <h1>No Movies Available !!!</h1>
-                            : movieList.map((movieCard: IMovieCardInfo) => {
+                            :
+                            movieList.map((movieCard: IMovieCardInfo) => {
                                 return <MovieCard key={movieCard.id} details={movieCard} />
                             })
 
                 }
+
 
             </div>
         </div>
