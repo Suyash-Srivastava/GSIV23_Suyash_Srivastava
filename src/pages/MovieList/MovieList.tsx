@@ -18,11 +18,10 @@ const MovieList = () => {
     const [pageNo, setPageNo] = useState(1)
     const dispatch = useDispatch()
 
-    useEffect(() => {
-
+    useEffect(():any => {
         dispatch(setMovieList([]))
         setAllMovieList()
-
+        return ()=>dispatch(setMovieList([]))
     }, [])
 
     async function setAllMovieList() {

@@ -12,26 +12,32 @@ const SearchBar = () => {
   const [searchInput, setSearchInput] = useState('')
   const dispatch = useDispatch()
 
+  const controller = new AbortController()
+
   useEffect(() => {
     //Debouncing implemented in Search
-    if (searchInput.length > 0) {
-      const searchTimeout = setTimeout(getSearchResults, 500)
-      return () => clearTimeout(searchTimeout)
-      //TODO: Additnaly abort call for api should be written here
+    let searchTimeout;
+
+    if (searchTimeout) {
+      controller.abort()
+      clearTimeout(searchTimeout)
     }
-    else{
-      setAllMovieList()
+    if (searchInput.length > 0) {
+      searchTimeout = setTimeout(() => getSearchResults(controller), 500)
+    }
+    else {
+      setTimeout(() => setAllMovieList(), 500)
     }
   }, [searchInput])
 
-  async function getSearchResults() {
-    const reslts = await searchInMovieList(searchInput, 1)
+  async function getSearchResults(controller: AbortController) {
+    const reslts = await searchInMovieList(searchInput, 1, controller)
     dispatch(setMovieList(reslts))
-  }    
+  }
   async function setAllMovieList() {
     const movielist = await getMovieList(1)
     dispatch(setMovieList(movielist))
-}
+  }
 
   return (
     <div className={styles.maincontainer}>

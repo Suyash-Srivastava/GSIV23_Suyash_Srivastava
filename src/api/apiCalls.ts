@@ -12,9 +12,11 @@ async function getMovieList(page_no: number):Promise<any[]> {
 
 }
 
-async function searchInMovieList(name:string,page_no: number) {
+async function searchInMovieList(name:string,page_no: number,controller:AbortController) {
     try {
-        const raw = await apiClient.get('/search/movie?query='+name+'&include_adult=false&page=' + page_no)
+        const raw = await apiClient.get('/search/movie?query='+name+'&include_adult=false&page=' + page_no,{
+            signal:controller.signal
+        })
         const actualdata: IMovieCardInfo[] = raw.data.results
         return actualdata
     }
