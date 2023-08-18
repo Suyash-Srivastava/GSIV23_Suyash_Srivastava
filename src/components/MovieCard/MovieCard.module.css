@@ -6,6 +6,7 @@
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: lightgray 0px 6px 12px -2px, gray 0px 3px 7px -3px;
+  cursor: pointer;
 }
 .imagecontainer {
   width: 100%;

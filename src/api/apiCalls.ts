@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import apiClient from "./apiClient";
 import { IMovieCardInfo, IMovieDetails } from "./apiInterface";
 
@@ -17,7 +18,7 @@ async function getMovieList(page_no: number) {
 
 async function searchInMovieList(name:string,page_no: number) {
     try {
-        const raw = await apiClient.get('/search/movie?query='+name+'&include_adult=false&page=1' + page_no)
+        const raw = await apiClient.get('/search/movie?query='+name+'&include_adult=false&page=' + page_no)
         const actualdata: IMovieCardInfo[] = raw.data.results
         return actualdata
     }
@@ -27,7 +28,7 @@ async function searchInMovieList(name:string,page_no: number) {
 }
 
 async function getMovieDetail(id: string): Promise<IMovieDetails> {
-    try {
+ 
         const baseurl = '/movie/' + id
         const movie_details: any = (await apiClient.get(baseurl)).data
         const credits: any = (await apiClient.get(baseurl + '/credits')).data
@@ -65,10 +66,8 @@ async function getMovieDetail(id: string): Promise<IMovieDetails> {
             cast: actingCasts
         }
         return formattedData
-    }
-    catch (error) {
-        return error
-    }
+    
+
 }
 
 

@@ -1,5 +1,4 @@
 
-import { IMovieCardInfo, IMovieDetails } from '../../api/apiInterface'
 import NavBar from '../../components/NavBar/NavBar'
 import styles from './MovieDetail.module.css'
 import useMovieDetails from './useMovieDetails'
@@ -15,16 +14,16 @@ const MovieDetail = () => {
           </div>
           <div className={styles.other_details}>
             <div className={styles.title_rating}>
-              <div className={styles.title}>{movieDetails?.title}</div> 
-              <div className={styles.rating}>{'('+movieDetails?.rating+')'}</div> 
-              </div>
-            <div className={styles.year_length_director}>
-              <div>{movieDetails?.year}</div>|
-              <div>{movieDetails?.movie_length}min</div>|
-              <div className={styles.directors}>{movieDetails?.directors.join(', ')}</div>
+              <div className={styles.title}>{movieDetails?.title ?? 'Title'}</div>
+              <div className={styles.rating}>{'(' + movieDetails?.rating ?? 'Rating' + ')'}</div>
             </div>
-            <div className={styles.cast}>Cast: {movieDetails?.cast.join(', ')}</div>
-            <div className={styles.desc}>Description: {movieDetails?.desc}</div>
+            <div className={styles.year_length_director}>
+              <div>{movieDetails?.year ?? 'year of release'}</div>|
+              <div>{movieDetails?.movie_length ?? '-'}min</div>|
+              <div className={styles.directors}>{movieDetails?.directors.join(', ') ?? '-'}</div>
+            </div>
+            <div className={styles.cast}>Cast: {movieDetails?.cast.join(', ') ?? '-'}</div>
+            <div className={styles.desc}>Description: {movieDetails?.desc ?? 'Movie Description is loading'}</div>
           </div>
         </div>
       </div>

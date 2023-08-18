@@ -1,6 +1,7 @@
 import MovieList from "../pages/MovieList/MovieList";
 import {
-    createBrowserRouter,
+    Navigate,
+    createBrowserRouter, redirect,
   } from "react-router-dom";
 import MovieDetail from "../pages/MovieDetail/MovieDetail";
 
@@ -8,7 +9,7 @@ import MovieDetail from "../pages/MovieDetail/MovieDetail";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <MovieList/>,
+        element: <Navigate to={'/movielist'}/>,
         errorElement:<h1>Oops Something went wrong, Check the route</h1>
     },
     {
