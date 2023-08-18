@@ -49,8 +49,8 @@ Start the server
 
 
 ## Screenshots
-[https://github.com/Suyash-Srivastava/GSIV23_Suyash_Srivastava/blob/main/src/assets/png/movielistpage.png]
-[https://github.com/Suyash-Srivastava/GSIV23_Suyash_Srivastava/blob/main/src/assets/png/moviedetailpage.png]
+[Movie List Page](https://github.com/Suyash-Srivastava/GSIV23_Suyash_Srivastava/blob/main/src/assets/png/movielistpage.png)
+[Movie Detail Page](https://github.com/Suyash-Srivastava/GSIV23_Suyash_Srivastava/blob/main/src/assets/png/moviedetailpage.png)
 
 
 ## Feedback
