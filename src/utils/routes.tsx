@@ -1,7 +1,7 @@
 import MovieList from "../pages/MovieList/MovieList";
 import {
     Navigate,
-    createBrowserRouter, redirect,
+    createBrowserRouter,
   } from "react-router-dom";
 import MovieDetail from "../pages/MovieDetail/MovieDetail";
 

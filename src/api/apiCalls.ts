@@ -3,16 +3,13 @@ import apiClient from "./apiClient";
 import { IMovieCardInfo, IMovieDetails } from "./apiInterface";
 
 async function getMovieList(page_no: number):Promise<any[]> {
-    try {
+   
         const raw = await apiClient.get('/movie/upcoming?page=' + page_no)
         const actualdata: IMovieCardInfo[] = raw.data.results
         console.log('search',actualdata);
         
         return actualdata
-    }
-    catch (error) {
-        return error
-    }
+
 }
 
 async function searchInMovieList(name:string,page_no: number) {
