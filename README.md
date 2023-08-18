@@ -43,6 +43,7 @@ Start the server
 ## Future Enchancments
 
 - Skeleton Loaders where needed
+- CSS varibles for color in components
 - Code Optimization Techniques (Tree Shaking,ofscation)
 - Better TypeSafe Code
 - Better Error Handling
