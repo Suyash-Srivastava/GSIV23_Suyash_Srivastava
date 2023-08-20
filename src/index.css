@@ -12,3 +12,11 @@ body {
   margin: 0;
   display: flex;
 }
+.placeholderimg{
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

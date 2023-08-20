@@ -11,12 +11,14 @@
 .imagecontainer {
   width: 100%;
   height: 75%;
+  background-color: #d3d3d3;
 }
 .imagearea {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .movie_details {
   width: 100%;
   height: 25%;

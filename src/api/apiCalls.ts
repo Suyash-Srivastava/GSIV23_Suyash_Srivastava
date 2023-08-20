@@ -6,23 +6,20 @@ async function getMovieList(page_no: number):Promise<any[]> {
    
         const raw = await apiClient.get('/movie/upcoming?page=' + page_no)
         const actualdata: IMovieCardInfo[] = raw.data.results
-        console.log('search',actualdata);
+        console.log('movielist',actualdata);
         
         return actualdata
 
 }
 
-async function searchInMovieList(name:string,page_no: number,controller:AbortController) {
-    try {
+async function searchInMovieList(name:string,page_no: number,controller?:AbortController):Promise<any[]> {
+
         const raw = await apiClient.get('/search/movie?query='+name+'&include_adult=false&page=' + page_no,{
-            signal:controller.signal
+            signal:controller?.signal
         })
         const actualdata: IMovieCardInfo[] = raw.data.results
+        console.log('saerch',actualdata);
         return actualdata
-    }
-    catch (error) {
-        return error
-    }
 }
 
 async function getMovieDetail(id: string): Promise<IMovieDetails> {
