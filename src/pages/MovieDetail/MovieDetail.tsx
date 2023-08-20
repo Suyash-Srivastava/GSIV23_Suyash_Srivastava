@@ -20,15 +20,15 @@ const MovieDetail = () => {
           </div>
           <div className={styles.other_details}>
             <div className={styles.title_rating}>
-              <div className={styles.title}>{movieDetails?.title ?? 'Title Of Movie'}</div>
-              <div className={styles.rating}>{'(' + (movieDetails?.rating ?? '10.0') + ')'}</div>
+              <div className={styles.title} title='Title Of Movie'>{movieDetails?.title ?? 'Title Of Movie'}</div>
+              <div className={styles.rating} title={'Rating'}>{'(' + (movieDetails?.rating.toFixed(2) ?? '10.0') + ')'}</div>
             </div>
             <div className={styles.year_length_director}>
-              <div>{movieDetails?.year ?? 'Year of Release'}</div>|
-              <div>{movieDetails?.movie_length ?? '99'}min</div>|
-              <div className={styles.directors}>{movieDetails?.directors.join(', ') ?? 'Director list ...'}</div>
+              <div title='Year of Release'>{movieDetails?.year ?? 'Year of Release'}</div>|
+              <div title='Movie Length'>{movieDetails?.movie_length ?? '99'}min</div>|
+              <div className={styles.directors} title='Director List'>{movieDetails?.directors.join(', ') ?? 'Director list ...'}</div>
             </div>
-            <div className={styles.cast}>Cast: {movieDetails?.cast.join(', ') ?? 'Cast list ...'}</div>
+            <div title='Cast List' className={styles.cast}>Cast: {movieDetails?.cast.join(', ') ?? 'Cast list ...'}</div>
             <div className={styles.desc}>Description: {movieDetails?.desc ?? 'Movie Description is loading'}</div>
           </div>
         </div>

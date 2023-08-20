@@ -94,6 +94,7 @@ const MovieList = () => {
                          <MovieCardLoader /> 
                          <MovieCardLoader /> 
                          <MovieCardLoader />
+                         <MovieCardLoader />
                          </>
                     ) :
                         movieList.length === 0 ?

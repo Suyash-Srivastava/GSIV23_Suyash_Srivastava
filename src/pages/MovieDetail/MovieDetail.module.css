@@ -64,6 +64,7 @@
 .directors:hover {
     overflow: visible;
     overflow-wrap: break-word;
+    white-space: normal;
   }
 .cast {
   width: 30rem;
@@ -74,6 +75,7 @@
 .cast:hover{
     overflow: visible;
     overflow-wrap: break-word;
+    white-space: normal;
 }
 .desc {
 }
