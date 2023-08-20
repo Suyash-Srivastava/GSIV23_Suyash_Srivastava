@@ -1,6 +1,7 @@
 import styles from './MovieCard.module.css'
 import { IMovieCardInfo } from '../../api/apiInterface'
 import { useNavigate } from "react-router-dom";
+import placholder_poster from '../../../src/assets/png/poster_placeholder.png'
 
 const MovieCard = ({ details }: { details: IMovieCardInfo }) => {
 
@@ -13,8 +14,8 @@ const MovieCard = ({ details }: { details: IMovieCardInfo }) => {
       <div className={styles.imagecontainer}>
         {
         poster_path ?
-          <img className={styles.imagearea} src={'https://image.tmdb.org/t/p/original/' + poster_path} alt="poster" loading='lazy' /> :
-          <img className="placeholderimg" src='../../../src/assets/png/poster_placeholder.png' alt="loading poster" />
+          <img className={styles.imagearea} src={'https://image.tmdb.org/t/p/original/' + poster_path} alt="poster" /> :
+          <img className="placeholderimg" src={placholder_poster} alt="loading poster" />
         }
       </div>
 

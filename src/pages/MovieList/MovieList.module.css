@@ -9,8 +9,8 @@
   display: flex;
   flex-wrap: wrap;
   padding: 1rem;
-  gap: 2rem 0rem;
-  justify-content: space-between;
+  gap: 2rem 2rem;
+  /* justify-content: space-between; */
   overflow-y: auto;
 }
 @media screen and (max-width: 800px) {
