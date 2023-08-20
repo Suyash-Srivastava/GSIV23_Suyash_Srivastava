@@ -64,15 +64,14 @@ const MovieList = () => {
         const scrollHeight = event.target.scrollHeight;
         const scrollTop = event.target.scrollTop;
         const clientHeight = event.target.clientHeight;
-        let data;
         if (clientHeight + scrollTop + 1 >= scrollHeight) {
             if (searchInput.length > 0) {
-                data = await setSeachResults()
+                 await setSeachResults()
             }
             else {
-                data = await setAllMovieList();
+             await setAllMovieList();
             }
-
+        
         }
     };
 
